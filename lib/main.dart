@@ -1,6 +1,7 @@
+import 'package:farnet/templateApps/templateList.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:random_color/random_color.dart';
 
 void main() {
@@ -43,18 +44,37 @@ class HomePage extends StatelessWidget {
             padding: EdgeInsets.only(bottom: 14),
             child: NameCard(),
           ),
+          // Expanded(
+          //   child: SingleChildScrollView(
+          //     physics: BouncingScrollPhysics(),
+          //     child: ListView.builder(
+          //       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 23),
+          //       physics: NeverScrollableScrollPhysics(),
+          //       shrinkWrap: true,
+          //       itemCount: 14,
+          //       itemBuilder: (context, index) {
+          //         return Container(
+          //           height: size.height * 0.15,
+          //           child: AppCard(),
+          //         );
+          //       },
+          //     ),
+          //   ),
+          // )
           Expanded(
             child: SingleChildScrollView(
               physics: BouncingScrollPhysics(),
               child: ListView.builder(
                 padding: EdgeInsets.symmetric(horizontal: 10, vertical: 23),
                 physics: NeverScrollableScrollPhysics(),
+                itemCount: TemplateList.tempList.length,
                 shrinkWrap: true,
-                itemCount: 14,
                 itemBuilder: (context, index) {
                   return Container(
                     height: size.height * 0.15,
-                    child: AppCard(),
+                    child: AppCard(
+                      tempItem: index,
+                    ),
                   );
                 },
               ),
@@ -109,6 +129,9 @@ class NameCard extends StatelessWidget {
 }
 
 class AppCard extends StatefulWidget {
+  final int tempItem;
+
+  const AppCard({Key key, this.tempItem}) : super(key: key);
   @override
   _AppCardState createState() => _AppCardState();
 }
@@ -121,6 +144,8 @@ class _AppCardState extends State<AppCard> {
 
   @override
   Widget build(BuildContext context) {
+    var dItem = TemplateList.tempList[widget.tempItem];
+
     return Padding(
       padding: EdgeInsets.all(10),
       child: Row(
@@ -141,41 +166,52 @@ class _AppCardState extends State<AppCard> {
           Expanded(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Card(
-                elevation: 1,
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey[200]),
-                    borderRadius: BorderRadius.circular(7),
-                  ),
-                  height: 70,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(left: 14),
-                        child: Text(
-                          "Learner",
-                          style: GoogleFonts.concertOne(
-                            fontSize: 30,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => dItem['dPath'],
+                    ),
+                  );
+                },
+                child: Card(
+                  elevation: 1,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey[200]),
+                      borderRadius: BorderRadius.circular(7),
+                    ),
+                    height: 70,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 14),
+                          child: Text(
+                            dItem['name'],
+                            style: GoogleFonts.concertOne(
+                              fontSize: 30,
+                            ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(8),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: randomLightColor,
-                            borderRadius: BorderRadiusDirectional.circular(100),
+                        Padding(
+                          padding: EdgeInsets.all(8),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: randomLightColor,
+                              borderRadius:
+                                  BorderRadiusDirectional.circular(100),
+                            ),
+                            child: Icon(
+                              Icons.arrow_forward,
+                              color: Colors.white,
+                              size: 28,
+                            ),
                           ),
-                          child: Icon(
-                            Icons.arrow_forward,
-                            color: Colors.white,
-                            size: 28,
-                          ),
-                        ),
-                      )
-                    ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
