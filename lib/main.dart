@@ -44,23 +44,6 @@ class HomePage extends StatelessWidget {
             padding: EdgeInsets.only(bottom: 14),
             child: NameCard(),
           ),
-          // Expanded(
-          //   child: SingleChildScrollView(
-          //     physics: BouncingScrollPhysics(),
-          //     child: ListView.builder(
-          //       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 23),
-          //       physics: NeverScrollableScrollPhysics(),
-          //       shrinkWrap: true,
-          //       itemCount: 14,
-          //       itemBuilder: (context, index) {
-          //         return Container(
-          //           height: size.height * 0.15,
-          //           child: AppCard(),
-          //         );
-          //       },
-          //     ),
-          //   ),
-          // )
           Expanded(
             child: SingleChildScrollView(
               physics: BouncingScrollPhysics(),
