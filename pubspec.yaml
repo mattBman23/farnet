@@ -30,6 +30,10 @@ dependencies:
   google_fonts: ^1.1.0
   line_icons: ^0.2.0
   random_color: ^1.0.5
+  table_calendar: ^2.2.3
+  fab_circular_menu: ^1.0.0
+  font_awesome_flutter: ^8.8.1
+  percent_indicator: ^2.1.6
 
 dev_dependencies:
   flutter_test:
@@ -52,6 +56,10 @@ flutter:
     - assets/doctorApp/images/category/
     - assets/doctorApp/images/docinfo/
     - assets/doctorApp/images/docprofile/
+    - assets/mediationUI/images/
+    - assets/homecleaning/image/
+    - assets/homecleaning/image/icons/
+    - assets/gamingui/images/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
