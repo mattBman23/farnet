@@ -34,6 +34,7 @@ dependencies:
   fab_circular_menu: ^1.0.0
   font_awesome_flutter: ^8.8.1
   percent_indicator: ^2.1.6
+  lipsum: ^1.0.1
 
 dev_dependencies:
   flutter_test:
@@ -60,6 +61,7 @@ flutter:
     - assets/homecleaning/image/
     - assets/homecleaning/image/icons/
     - assets/gamingui/images/
+    - assets/ninjatrip/images/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

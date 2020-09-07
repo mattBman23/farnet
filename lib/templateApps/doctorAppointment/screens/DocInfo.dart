@@ -9,17 +9,17 @@ class DocInfoPage extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'avenir',
       ),
-      home: docInfo(),
+      home: DocInfo(),
     );
   }
 }
 
-class docInfo extends StatefulWidget {
+class DocInfo extends StatefulWidget {
   @override
-  _docInfoState createState() => _docInfoState();
+  _DocInfoState createState() => _DocInfoState();
 }
 
-class _docInfoState extends State<docInfo> {
+class _DocInfoState extends State<DocInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

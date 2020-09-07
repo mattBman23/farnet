@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
                 child: CustomPaint(
-                  painter: pathPainter(),
+                  painter: PathPainter(),
                 ),
               ),
               Container(
@@ -112,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class pathPainter extends CustomPainter {
+class PathPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var paint = Paint();

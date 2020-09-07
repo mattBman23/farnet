@@ -34,7 +34,7 @@ class _MyFirstPageState extends State<MyFirstPage> {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: CustomPaint(
-              painter: pathPainter(),
+              painter: PathPainter(),
             ),
           ),
           Container(
@@ -234,7 +234,7 @@ class _MyFirstPageState extends State<MyFirstPage> {
   }
 }
 
-class pathPainter extends CustomPainter {
+class PathPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var paint = new Paint();
