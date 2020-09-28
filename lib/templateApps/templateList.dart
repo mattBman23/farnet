@@ -6,6 +6,7 @@ import 'package:farnet/templateApps/homecleaning/main.dart';
 import 'package:farnet/templateApps/laundry/main.dart';
 import 'package:farnet/templateApps/mediationUI/main.dart';
 import 'package:farnet/templateApps/ninjaTrips/main.dart';
+import 'package:farnet/templateApps/productionApp/main.dart';
 import 'package:farnet/templateApps/snakes/main.dart';
 
 class TemplateList {
@@ -21,5 +22,6 @@ class TemplateList {
     {"name": "Homecleaning", "dPath": HomecleaningMain()},
     {"name": "Gaming UI", "dPath": GamingUIMain()},
     {"name": "Ninjatrip", "dPath": NinjaTripMain()},
+    {"name": "Prod App", "dPath": ProdAppMain()},
   ];
 }
