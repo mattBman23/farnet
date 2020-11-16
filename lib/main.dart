@@ -26,44 +26,35 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Color(0xfffbfbfb),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: Text(
-          "Farnet",
-          style: GoogleFonts.varelaRound(
-            color: Colors.black,
-            fontSize: 32,
-          ),
-        ),
-      ),
-      body: Column(
-        children: [
-          Container(
-            height: size.height * 0.15,
-            padding: EdgeInsets.only(bottom: 14),
-            child: NameCard(),
-          ),
-          Expanded(
-            child: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
-              child: ListView.builder(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 23),
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: TemplateList.tempList.length,
-                shrinkWrap: true,
-                itemBuilder: (context, index) {
-                  return Container(
-                    height: size.height * 0.15,
-                    child: AppCard(
-                      tempItem: index,
-                    ),
-                  );
-                },
-              ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Container(
+              height: size.height * 0.15,
+              padding: EdgeInsets.only(bottom: 14),
+              child: NameCard(),
             ),
-          )
-        ],
+            Expanded(
+              child: SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
+                child: ListView.builder(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 23),
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: TemplateList.tempList.length,
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      height: size.height * 0.15,
+                      child: AppCard(
+                        tempItem: index,
+                      ),
+                    );
+                  },
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -91,7 +82,7 @@ class NameCard extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.all(13),
+        padding: EdgeInsets.all(10),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,

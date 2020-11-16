@@ -8,6 +8,7 @@ import 'package:farnet/templateApps/mediationUI/main.dart';
 import 'package:farnet/templateApps/ninjaTrips/main.dart';
 import 'package:farnet/templateApps/productionApp/main.dart';
 import 'package:farnet/templateApps/snakes/main.dart';
+import 'package:farnet/templateApps/travelapp/main.dart';
 
 class TemplateList {
   TemplateList._();
@@ -23,5 +24,6 @@ class TemplateList {
     {"name": "Gaming UI", "dPath": GamingUIMain()},
     {"name": "Ninjatrip", "dPath": NinjaTripMain()},
     {"name": "Prod App", "dPath": ProdAppMain()},
+    {"name": "Travel App", "dPath": TravelAppMain()},
   ];
 }
