@@ -75,5 +75,3 @@ class AplanetMain extends StatelessWidget {
     );
   }
 }
-
-// from https://www.youtube.com/watch?v=FOqwjBRiDzE

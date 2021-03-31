@@ -1,5 +1,7 @@
 import 'package:farnet/templateApps/templateList.dart';
+import 'package:farnet/templateApps/todoAppA/main.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:random_color/random_color.dart';
@@ -14,7 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Farnet',
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      // home: HomePage(),
+      home: TodoAMain(),
     );
   }
 }
@@ -35,18 +38,25 @@ class HomePage extends StatelessWidget {
               child: NameCard(),
             ),
             Expanded(
-              child: SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
+              child: AnimationLimiter(
                 child: ListView.builder(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 23),
-                  physics: NeverScrollableScrollPhysics(),
                   itemCount: TemplateList.tempList.length,
+                  physics: BouncingScrollPhysics(),
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
-                    return Container(
-                      height: size.height * 0.15,
-                      child: AppCard(
-                        tempItem: index,
+                    return AnimationConfiguration.staggeredList(
+                      position: index,
+                      duration: Duration(milliseconds: 400),
+                      child: SlideAnimation(
+                        horizontalOffset: size.width * 0.5,
+                        verticalOffset: size.height * 0.5,
+                        child: Container(
+                          height: size.height * 0.15,
+                          child: AppCard(
+                            tempItem: index,
+                          ),
+                        ),
                       ),
                     );
                   },
@@ -165,7 +175,7 @@ class _AppCardState extends State<AppCard> {
                           child: Text(
                             dItem['name'],
                             style: GoogleFonts.concertOne(
-                              fontSize: 30,
+                              fontSize: 23,
                             ),
                           ),
                         ),
